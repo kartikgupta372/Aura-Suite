@@ -2,7 +2,7 @@
 window.AURA = {
   // GitHub Releases of kartikgupta372/Aura-Suite. Turn releasePublished on after the first tagged release exists.
   releaseBase: "https://github.com/kartikgupta372/Aura-Suite/releases/latest/download/",
-  releasePublished: false,
+  releasePublished: true,
 
   // aura-suite Supabase project. The publishable key is safe in a browser: the waitlist table only accepts inserts.
   supabaseUrl: "https://grmaprevhcrjrlstssfi.supabase.co",
@@ -18,7 +18,7 @@ window.AURA = {
   web: {
     design:  { url: "https://aura-design-ai-gilt.vercel.app", live: true },
     sponsor: { url: "https://sponsorfit-inky.vercel.app",     live: true },
-    beat:    { url: "", live: false },
+    beat:    { url: "https://beatbeater.vercel.app", live: true },
     speak:   { url: "", live: false },
     codex:   { url: "", live: false },
   },
