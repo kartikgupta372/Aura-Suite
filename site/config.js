@@ -1,7 +1,7 @@
 // The one file to edit when something ships. Every button on the site reads from here.
 window.AURA = {
-  // GitHub Releases of kartikgupta372/aura-suite. Turn releasePublished on after the first tagged release exists.
-  releaseBase: "https://github.com/kartikgupta372/aura-suite/releases/latest/download/",
+  // GitHub Releases of kartikgupta372/Aura-Suite. Turn releasePublished on after the first tagged release exists.
+  releaseBase: "https://github.com/kartikgupta372/Aura-Suite/releases/latest/download/",
   releasePublished: false,
 
   // aura-suite Supabase project. The publishable key is safe in a browser: the waitlist table only accepts inserts.
@@ -16,8 +16,8 @@ window.AURA = {
 
   // Web tools: set url and live: true once the site is public.
   web: {
-    design:  { url: "https://aura-design-ai-gilt.vercel.app", live: false },
-    sponsor: { url: "https://sponsorfit-inky.vercel.app",     live: false },
+    design:  { url: "https://aura-design-ai-gilt.vercel.app", live: true },
+    sponsor: { url: "https://sponsorfit-inky.vercel.app",     live: true },
     beat:    { url: "", live: false },
     speak:   { url: "", live: false },
     codex:   { url: "", live: false },
