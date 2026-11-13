@@ -1,0 +1,66 @@
+{
+  "name": "inkboard",
+  "version": "1.0.0",
+  "description": "A fast whiteboard + notebook with Word-style text and handwriting AI",
+  "main": "src/main.js",
+  "scripts": {
+    "start": "electron .",
+    "dist:win": "npx --yes electron-builder@26 --win --x64 --publish never"
+  },
+  "keywords": [],
+  "author": "Aura Ventures",
+  "license": "MIT",
+  "devDependencies": {
+    "electron": "^45.3.1"
+  },
+  "productName": "Inkboard",
+  "build": {
+    "appId": "com.auraventures.inkboard",
+    "copyright": "Copyright © 2026 Aura Ventures",
+    "productName": "Inkboard",
+    "files": [
+      "src/**/*",
+      "build/icon.png",
+      "build/icon.ico",
+      "package.json"
+    ],
+    "directories": {
+      "output": "dist"
+    },
+    "fileAssociations": [
+      {
+        "ext": "inkb",
+        "name": "Inkboard notebook",
+        "description": "Inkboard notebook",
+        "role": "Editor"
+      }
+    ],
+    "win": {
+      "target": [
+        {
+          "target": "nsis",
+          "arch": [
+            "x64"
+          ]
+        },
+        {
+          "target": "zip",
+          "arch": [
+            "x64"
+          ]
+        }
+      ],
+      "icon": "build/icon.ico",
+      "artifactName": "Inkboard-${version}-win-x64.${ext}"
+    },
+    "nsis": {
+      "oneClick": false,
+      "perMachine": false,
+      "allowToChangeInstallationDirectory": true,
+      "createDesktopShortcut": true,
+      "createStartMenuShortcut": true,
+      "shortcutName": "Inkboard",
+      "artifactName": "Inkboard-Setup-${version}.exe"
+    }
+  }
+}

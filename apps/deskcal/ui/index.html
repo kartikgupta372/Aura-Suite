@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>DeskCal</title>
+<link rel="icon" href="icon.svg" type="image/svg+xml">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<header class="bar">
+  <div class="nav">
+    <button class="icon" id="prev" title="Previous month (←)" aria-label="Previous month"><svg viewBox="0 0 24 24"><path d="M15 6l-6 6 6 6"/></svg></button>
+    <h1 id="monthLabel">Month</h1>
+    <button class="icon" id="next" title="Next month (→)" aria-label="Next month"><svg viewBox="0 0 24 24"><path d="M9 6l6 6-6 6"/></svg></button>
+    <button class="ghost" id="todayBtn" title="Go to today (T)">Today</button>
+    <div class="seg" role="tablist">
+      <button id="viewMonth" class="on" role="tab">Month</button>
+      <button id="viewAgenda" role="tab">Agenda</button>
+    </div>
+  </div>
+  <form class="quick" id="quickForm" autocomplete="off">
+    <button type="button" class="mic" id="micBtn" title="Add by talking (M)" aria-label="Add by voice"><svg viewBox="0 0 24 24"><rect x="9" y="3" width="6" height="11" rx="3"/><path d="M5 11a7 7 0 0 0 14 0M12 18v3"/></svg></button>
+    <input id="quickInput" placeholder="Say or type: “Exam on 20 Nov at 10 am, extremely important”" aria-label="Quick add">
+    <button type="submit" class="primary">Add</button>
+  </form>
+  <div class="tools">
+    <input id="search" type="search" placeholder="Search" aria-label="Search events">
+    <button class="icon" id="settingsBtn" title="Settings" aria-label="Settings"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="3"/><path d="M19.4 15a1.7 1.7 0 0 0 .3 1.8l.1.1a2 2 0 1 1-2.8 2.8l-.1-.1a1.7 1.7 0 0 0-1.8-.3 1.7 1.7 0 0 0-1 1.5V21a2 2 0 1 1-4 0v-.1a1.7 1.7 0 0 0-1.1-1.5 1.7 1.7 0 0 0-1.8.3l-.1.1a2 2 0 1 1-2.8-2.8l.1-.1a1.7 1.7 0 0 0 .3-1.8 1.7 1.7 0 0 0-1.5-1H3a2 2 0 1 1 0-4h.1a1.7 1.7 0 0 0 1.5-1.1 1.7 1.7 0 0 0-.3-1.8l-.1-.1a2 2 0 1 1 2.8-2.8l.1.1a1.7 1.7 0 0 0 1.8.3H9a1.7 1.7 0 0 0 1-1.5V3a2 2 0 1 1 4 0v.1a1.7 1.7 0 0 0 1 1.5 1.7 1.7 0 0 0 1.8-.3l.1-.1a2 2 0 1 1 2.8 2.8l-.1.1a1.7 1.7 0 0 0-.3 1.8V9a1.7 1.7 0 0 0 1.5 1H21a2 2 0 1 1 0 4h-.1a1.7 1.7 0 0 0-1.5 1z"/></svg></button>
+  </div>
+</header>
+
+<div id="preview" class="preview" hidden></div>
+
+<main class="layout">
+  <section class="cal" id="calView">
+    <div class="dow" id="dow"></div>
+    <div class="grid" id="grid"></div>
+    <div class="legend">
+      <span><i style="--c:var(--yellow)"></i>Normal</span>
+      <span><i style="--c:var(--orange)"></i>Important</span>
+      <span><i style="--c:var(--red)"></i>Very important</span>
+      <span><i style="--c:var(--blue)"></i>Extremely important</span>
+      <span class="hint">Click a date to set its motive · Double-click to open its timetable</span>
+    </div>
+  </section>
+  <section class="agenda" id="agendaView" hidden></section>
+
+  <aside class="side" id="side">
+    <div class="dayhead">
+      <div>
+        <div class="dname" id="dayName"></div>
+        <div class="ddate" id="dayDate"></div>
+      </div>
+      <button class="ghost" id="openTT" title="Open timetable (or double-click the date)">Timetable</button>
+    </div>
+
+    <label class="lbl" for="motive">Motive of the day</label>
+    <input id="motive" placeholder="What is this day about?">
+    <div class="chips" id="dayChips"></div>
+
+    <div class="sechead"><span>Events</span><span class="count" id="evCount"></span></div>
+    <ul class="events" id="eventList"></ul>
+
+    <form class="addev" id="eventForm" autocomplete="off">
+      <input id="evTitle" placeholder="Add an event on this day" aria-label="Event title" required>
+      <div class="row">
+        <label>Time<input type="time" id="evTime"></label>
+        <label>Remind
+          <select id="evRemind">
+            <option value="0">At time</option><option value="5">5 min before</option><option value="15" selected>15 min before</option>
+            <option value="30">30 min before</option><option value="60">1 hour before</option><option value="180">3 hours before</option><option value="1440">1 day before</option>
+          </select>
+        </label>
+        <label>Repeat
+          <select id="evRepeat"><option value="none">Never</option><option value="daily">Daily</option><option value="weekly">Weekly</option><option value="monthly">Monthly</option><option value="yearly">Yearly</option></select>
+        </label>
+      </div>
+      <div class="chips" id="evChips"></div>
+      <input id="evNotes" placeholder="Notes (optional)" aria-label="Notes">
+      <div class="formbtns">
+        <button type="button" class="ghost" id="evCancel" hidden>Cancel edit</button>
+        <button type="submit" class="primary" id="evSave">Add event</button>
+      </div>
+    </form>
+
+    <div class="sechead"><span>Coming up</span></div>
+    <ul class="upcoming" id="upcoming"></ul>
+  </aside>
+</main>
+
+<!-- Timetable -->
+<div class="modal" id="ttModal" hidden>
+  <div class="sheet" role="dialog" aria-modal="true" aria-labelledby="ttTitle">
+    <div class="sheethead">
+      <h2 id="ttTitle">Timetable</h2>
+      <button class="icon" id="ttClose" title="Close (Esc)" aria-label="Close"><svg viewBox="0 0 24 24"><path d="M6 6l12 12M18 6L6 18"/></svg></button>
+    </div>
+    <div class="ttbar">
+      <button class="ghost" id="ttAddRow">+ Row</button>
+      <button class="ghost" id="ttDelRow">− Row</button>
+      <button class="ghost" id="ttAddCol">+ Column</button>
+      <button class="ghost" id="ttDelCol">− Column</button>
+      <span class="sp"></span>
+      <button class="ghost" id="ttCopyPrev" title="Copy the most recent earlier timetable into this day">Copy previous timetable</button>
+      <button class="ghost danger" id="ttClear">Clear timetable</button>
+    </div>
+    <div class="ttwrap"><table class="tt" id="ttTable"></table></div>
+    <p class="saved">Saved automatically</p>
+  </div>
+</div>
+
+<!-- Settings -->
+<div class="modal" id="setModal" hidden>
+  <div class="sheet small" role="dialog" aria-modal="true" aria-labelledby="setTitle">
+    <div class="sheethead">
+      <h2 id="setTitle">Settings</h2>
+      <button class="icon" id="setClose" aria-label="Close"><svg viewBox="0 0 24 24"><path d="M6 6l12 12M18 6L6 18"/></svg></button>
+    </div>
+    <label class="lbl">Morning reminder time for all-day dates<input type="time" id="setMorning"></label>
+    <label class="lbl">Week starts on
+      <select id="setWeek"><option value="0">Sunday</option><option value="1">Monday</option></select>
+    </label>
+    <div class="setbtns">
+      <button class="ghost" id="testNotify">Send test notification</button>
+      <button class="ghost" id="exportBtn">Export backup</button>
+      <button class="ghost" id="importBtn">Import backup</button>
+      <input type="file" id="importFile" accept=".json" hidden>
+    </div>
+    <p class="muted">Your data is saved on this PC in <code>%APPDATA%\com.auraventures.deskcal</code>, with a daily copy in <code>backups</code>. Closing the window keeps DeskCal in the tray so reminders still arrive; right-click the tray icon to quit.</p>
+    <p class="muted">Shortcuts: ← → months · T today · M talk · Esc close</p>
+  </div>
+</div>
+
+<div class="toast" id="toast" hidden></div>
+<script src="shared.js"></script>
+<script src="app.js"></script>
+<script src="reminders.js"></script>
+</body>
+</html>

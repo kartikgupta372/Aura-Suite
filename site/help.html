@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Help — Aura Suite</title>
+<meta name="description" content="How to use DeskCal, Inkboard and the Aura web tools.">
+<link rel="icon" href="icons/icon-launcher.svg" type="image/svg+xml">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Syne:wght@600;700;800&family=Instrument+Sans:wght@400;500;600&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<a class="skip" href="#content">Skip to content</a>
+<style>:root{--a-inkboard:#4f8ff7;--a-deskcal:#2dd4a7;--a-launcher:#e9e1d0;--a-design:#8b6dfd;--a-speak:#06b6d4;--a-beat:#d4af37;--a-codex:#e0605f;--a-sponsor:#e95aa8}</style>
+<div class="wrap"><header class="top"><a class="logo" href="index.html" aria-label="Aura Suite home"><svg viewBox="0 0 64 64" aria-hidden="true"><g fill="none" stroke="#e9e1d0" stroke-width="7"><path d="M32 6 A26 26 0 0 1 50.4 13.6"/><path d="M54.8 18 A26 26 0 0 1 58 32" transform="translate(-1.5 .5)"/><path d="M58 36 A26 26 0 0 1 50.4 50.4" transform="translate(-1 0)"/><path d="M46 54.8 A26 26 0 0 1 32 58" transform="translate(0 -1)"/><path d="M28 58 A26 26 0 0 1 13.6 50.4"/><path d="M9.2 46 A26 26 0 0 1 6 32"/><path d="M6 28 A26 26 0 0 1 13.6 13.6"/><path d="M18 9.2 A26 26 0 0 1 28 6"/></g></svg>Aura Suite</a><nav class="main" aria-label="Main"><a href="index.html">Apps</a><a href="download.html">Download</a><a href="help.html" aria-current="page">Help</a></nav></header></div>
+<div class="wrap help" id="content">
+<nav class="toc" aria-label="On this page"><p>Help</p><ul>
+<li><a href="#start">Getting started</a></li><li><a href="#deskcal">DeskCal</a></li><li><a href="#inkboard">Inkboard</a></li>
+<li><a href="#web">Web tools</a></li><li><a href="#account">Your account</a></li><li><a href="#privacy">Privacy and data</a></li><li><a href="#trouble">Fixing problems</a></li>
+</ul></nav>
+<article class="doc">
+<h1>Help</h1>
+<p>Everything you need to use Aura Suite. Press <kbd>Ctrl</kbd> <kbd>F</kbd> to search this page.</p>
+
+<h2 id="start">Getting started</h2>
+<p>Aura Suite has two kinds of tools.</p>
+<table><thead><tr><th>Kind</th><th>Tools</th><th>How you get it</th></tr></thead><tbody>
+<tr><td><b>On your PC</b></td><td>DeskCal, Inkboard (Launcher next)</td><td>Download an installer from the <a href="download.html">Download page</a>. Works offline. Files stay on your computer.</td></tr>
+<tr><td><b>In your browser</b></td><td>Aura Design, Speak AI, BeatBeater, SponsorFit, Codex Vitae</td><td>Open the link on the <a href="index.html#browser">Apps page</a>. Use Chrome or Edge for the best results.</td></tr>
+</tbody></table>
+<p>The desktop apps need Windows 10 or 11 (64-bit). Windows may warn you the first time you run an installer; click <b>More info</b>, then <b>Run anyway</b>. The <a href="download.html#h-install">Download page</a> explains why.</p>
+
+<h2 id="deskcal">DeskCal</h2>
+<p>A calendar that reminds you. Close the window and it keeps running in the system tray, so reminders still arrive.</p>
+<h3>Add something</h3>
+<ul>
+<li>Type in the box at the top in plain words, such as <code>dentist friday 4pm</code> or <code>pay rent on the 1st every month</code>. DeskCal shows what it understood; press <b>Add</b> to keep it.</li>
+<li>Or press <kbd>M</kbd> and say it. Allow the microphone the first time.</li>
+<li>For full control, click a date and use the event form: title, time, reminder, repeat and importance.</li>
+</ul>
+<h3>Importance colours</h3>
+<table><thead><tr><th>Colour</th><th>Meaning</th><th>Reminder</th></tr></thead><tbody>
+<tr><td><span class="dot" style="background:#F5C518"></span>Yellow</td><td>Normal</td><td>At the time you choose</td></tr>
+<tr><td><span class="dot" style="background:#F28C28"></span>Orange</td><td>Important</td><td>At the time you choose</td></tr>
+<tr><td><span class="dot" style="background:#E5383B"></span>Red</td><td>Very important</td><td>At the time you choose, listed first on the day</td></tr>
+<tr><td><span class="dot" style="background:#2F6FED"></span>Blue</td><td>Extremely important</td><td>Also warns you at 6 PM the evening before</td></tr>
+</tbody></table>
+<h3>Plan a day</h3>
+<ul>
+<li><b>Click a date</b> to write its motive, the one thing that day is for. You get it as a notification in the morning.</li>
+<li><b>Double-click a date</b> to open its timetable. Add rows and columns, or copy the previous timetable to start from yesterday's plan. It saves as you type.</li>
+<li>Tick an event to mark it done. Done events stop reminding you.</li>
+</ul>
+<h3>Reminders</h3>
+<ul>
+<li>Timed events remind you at the time, plus the earlier reminder you picked (5 minutes to 1 day before).</li>
+<li>All-day events remind you at your morning time. Change it in <b>Settings → Morning reminder time</b>.</li>
+<li>Use <b>Settings → Send test notification</b> to check notifications work. If nothing appears, see <a href="#trouble">Fixing problems</a>.</li>
+<li>DeskCal starts quietly with Windows so reminders never miss. To stop that, open Windows <b>Settings → Apps → Startup</b> and switch DeskCal off.</li>
+<li>To quit completely, right-click the DeskCal icon in the tray and choose <b>Quit</b>. Reminders stop until you open it again.</li>
+</ul>
+<h3>Shortcuts</h3>
+<p><kbd>←</kbd> <kbd>→</kbd> previous or next month · <kbd>T</kbd> today · <kbd>M</kbd> talk · <kbd>Esc</kbd> close a panel</p>
+<h3>Back up or move to a new PC</h3>
+<p><b>Settings → Export backup</b> saves one file. On the new PC, install DeskCal and use <b>Import backup</b>. DeskCal also keeps its own daily copy.</p>
+
+<h2 id="inkboard">Inkboard</h2>
+<p>A whiteboard that is also a notebook. Draw anywhere, double-click to type, and every notebook is a real file.</p>
+<h3>Notebooks and folders</h3>
+<ul>
+<li>Your library is the sidebar on the left. It shows the folder <code>Documents\Inkboard</code>, and every folder there is a real folder.</li>
+<li>Use the buttons at the top of the sidebar to make a notebook or folder. Right-click anything to rename, duplicate, show it in File Explorer or move it to the Recycle Bin. Drag to move it into another folder.</li>
+<li>Notebooks save themselves half a second after every change. <kbd>Ctrl</kbd> <kbd>S</kbd> saves at once; <kbd>Ctrl</kbd> <kbd>Shift</kbd> <kbd>S</kbd> saves a copy anywhere.</li>
+<li>Double-click an <code>.inkb</code> file anywhere on your PC to open it.</li>
+</ul>
+<h3>Writing and typing</h3>
+<ul>
+<li>Write or draw with a pen, finger or mouse. Pressure is used if your pen supports it.</li>
+<li>Hold the pen still at the end of a stroke and it snaps to a clean line, rectangle, ellipse, triangle or polygon.</li>
+<li><b>Double-click</b> anywhere to type. Text boxes work like a word processor, with headings, lists, checklists and tables.</li>
+<li>Press <kbd>?</kbd> inside Inkboard to see every shortcut.</li>
+</ul>
+<h3>Handwriting help</h3>
+<p>The <b>Handwriting</b> button in the bottom-right corner sets what happens when you pause writing:</p>
+<table><thead><tr><th>Mode</th><th>What it does</th><th>Internet</th></tr></thead><tbody>
+<tr><td><b>Off</b></td><td>Leaves your ink exactly as written.</td><td>No</td></tr>
+<tr><td><b>Neaten</b></td><td>Straightens lines and evens out letter size and spacing. Still your handwriting.</td><td>No</td></tr>
+<tr><td><b>Convert to text</b></td><td>Turns handwriting into clean text. Your original ink is kept, so <b>Original ink</b> brings it back.</td><td>Yes</td></tr>
+</tbody></table>
+<p>Convert to text currently needs your own AI key. Add it in <b>Settings → Handwriting &amp; AI</b>. It is stored encrypted on your PC. A free built-in option is planned.</p>
+<h3>Share your work</h3>
+<p>Use <b>Export</b> to save a page as a PDF (text stays selectable) or a PNG image.</p>
+
+<h2 id="web">Web tools</h2>
+<p>These run in your browser. Use a recent Chrome or Edge on a laptop or desktop.</p>
+<h3>Aura Design</h3>
+<p>Paste the address of any website. Aura Design opens it, takes screenshots, predicts where people look first, and gives you a short list of changes ranked by impact. Ask follow-up questions in the chat beside the results.</p>
+<h3>Speak AI</h3>
+<p>Choose a speaker whose style you admire, then record yourself. You get scores for confidence, clarity, pacing and stress, plus coaching on what to change. Allow the microphone when asked. Practise in turns, and each session keeps your best score.</p>
+<h3>BeatBeater</h3>
+<p>Play drums with your hands in front of the webcam. Teach it your own gestures in a few examples each, then load a song to practise in time with it. Video never leaves your computer: only hand positions are used, and saving them is optional. Good light and a plain background work best.</p>
+<h3>SponsorFit</h3>
+<p>For podcasters and YouTubers. Enter your show, and SponsorFit finds brands your audience already likes, explains each match with a Fit Score, drafts the pitch email and builds a media-kit link you can send. Press <b>Try the demo</b> to look around without an account.</p>
+<h3>Codex Vitae</h3>
+<p>Pick a thinker and ask a question. Replies stay in character and point to the ideas behind them. It is for learning, not advice; for anything urgent, talk to a real person.</p>
+
+<h2 id="account">Your account</h2>
+<ul>
+<li>The desktop apps never need an account.</li>
+<li>Web tools ask you to sign in only when you want to save your work. BeatBeater and SponsorFit already share one Aura account; the other tools are joining it.</li>
+<li>Everything is free today. A Pro plan with higher AI limits comes later, and free features stay free.</li>
+</ul>
+
+<h2 id="privacy">Privacy and data</h2>
+<table><thead><tr><th>Tool</th><th>Where your data lives</th></tr></thead><tbody>
+<tr><td>DeskCal</td><td>Only on your PC. Nothing is uploaded.</td></tr>
+<tr><td>Inkboard</td><td>Only on your PC, as <code>.inkb</code> files. Convert to text sends the selected handwriting image to the AI provider whose key you entered.</td></tr>
+<tr><td>BeatBeater</td><td>Camera video stays on your device. If you sign in, your gestures, sessions and beat maps are saved to your account. Performance data is shared only if you opt in.</td></tr>
+<tr><td>SponsorFit</td><td>Your shows, matches, pitches and deals are saved to your account. Media kits you publish can be read by anyone with the link.</td></tr>
+<tr><td>Other web tools</td><td>What you submit (a link, a recording, a question) is processed to give you a result and kept so you can see your history.</td></tr>
+</tbody></table>
+<p>We never sell your data and there are no ads. To delete your account and its data, use <a href="https://github.com/kartikgupta372/aura-suite/issues">Report a problem</a> and choose "Delete my data".</p>
+
+<h2 id="trouble">Fixing problems</h2>
+<h3>"Windows protected your PC" when installing</h3>
+<p>Click <b>More info</b>, then <b>Run anyway</b>. The app is new and not yet code-signed.</p>
+<h3>DeskCal reminders don't appear</h3>
+<ol>
+<li>Check DeskCal is in the tray (the arrow near the clock). If not, open it from the Start menu.</li>
+<li>Open Windows <b>Settings → System → Notifications</b>, make sure notifications are on and DeskCal is allowed.</li>
+<li>Turn off <b>Do not disturb</b> or Focus.</li>
+<li>Use <b>Settings → Send test notification</b> in DeskCal.</li>
+</ol>
+<h3>Inkboard says an item is outside your library</h3>
+<p>Inkboard only renames, moves or deletes things inside your library folder, to keep the rest of your PC safe. Open notebooks from elsewhere with <b>⋯ → Open notebook from anywhere</b>, or change your library folder in Settings.</p>
+<h3>The camera or microphone doesn't work in a web tool</h3>
+<p>Click the icon at the left of the address bar, allow the camera or microphone, and reload the page. Close other apps that may be using it, such as Zoom or Teams.</p>
+<h3>Something else</h3>
+<p>Use <a href="https://github.com/kartikgupta372/aura-suite/issues">Report a problem</a>. Say which app, what you did, and what happened. A screenshot helps.</p>
+</article>
+</div>
+<div class="wrap"><footer class="bottom"><span>Aura Suite, by Aura Ventures</span><nav aria-label="Footer"><a href="download.html">Download</a><a href="help.html">Help</a><a href="help.html#privacy">Privacy</a><a href="https://github.com/kartikgupta372/aura-suite/issues">Report a problem</a></nav></footer></div>
+<script src="config.js"></script>
+<script src="site.js"></script>
+</body>
+</html>

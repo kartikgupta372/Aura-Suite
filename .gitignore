@@ -1,0 +1,7 @@
+node_modules/
+dist/
+apps/deskcal/src-tauri/target/
+apps/deskcal/src-tauri/gen/
+apps/deskcal/src-tauri/icons/
+.env
+.env.*
