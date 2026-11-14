@@ -20,6 +20,6 @@ window.AURA = {
     sponsor: { url: "https://sponsorfit-inky.vercel.app",     live: true },
     beat:    { url: "https://beatbeater.vercel.app", live: true },
     speak:   { url: "", live: false },
-    codex:   { url: "", live: false },
+    codex:   { url: "https://codex-vitae-two.vercel.app", live: true },
   },
 };
