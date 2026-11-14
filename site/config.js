@@ -21,5 +21,8 @@ window.AURA = {
     beat:    { url: "https://beatbeater.vercel.app", live: true },
     speak:   { url: "", live: false },
     codex:   { url: "https://codex-vitae-two.vercel.app", live: true },
+    campus:  { url: "", live: false },
+    counter: { url: "", live: false },
+    sprout:  { url: "", live: false },
   },
 };
