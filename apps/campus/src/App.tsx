@@ -1,42 +1,40 @@
 import { useState } from 'react'
 import Today from './views/Today'
-import Subjects from './views/Subjects'
+import Attendance from './views/Attendance'
+import Planner from './views/Planner'
 import Exams from './views/Exams'
-import Viva from './views/Viva'
-import Study from './views/Study'
-import More from './views/More'
+import Tools from './views/Tools'
 
 const tabs = [
   { id: 'today', label: 'Today' },
   { id: 'attendance', label: 'Attendance' },
+  { id: 'planner', label: 'Planner' },
   { id: 'exams', label: 'Exams' },
-  { id: 'viva', label: 'Viva' },
-  { id: 'study', label: 'Study' },
-  { id: 'more', label: 'More' },
+  { id: 'tools', label: 'Tools' },
 ] as const
 type Tab = (typeof tabs)[number]['id']
 
 export default function App() {
   const [tab, setTab] = useState<Tab>('today')
+  const [key, setKey] = useState(0) // remount Attendance when other screens send the student to a sub-page
+  const [start, setStart] = useState<'overview' | 'skip' | 'timetable' | 'setup'>('overview')
+  const go = (t: Tab, sub?: typeof start) => { if (sub) { setStart(sub); setKey((k) => k + 1) } setTab(t) }
   return (
     <div className="shell">
       <nav className="nav" aria-label="Main">
         <div className="brand">Aura Campus</div>
         <ul>
           {tabs.map((t) => (
-            <li key={t.id}>
-              <button className="tab" aria-current={tab === t.id ? 'page' : undefined} onClick={() => setTab(t.id)}>{t.label}</button>
-            </li>
+            <li key={t.id}><button className="tab" aria-current={tab === t.id ? 'page' : undefined} onClick={() => setTab(t.id)}>{t.label}</button></li>
           ))}
         </ul>
       </nav>
       <main>
-        {tab === 'today' && <Today go={(t) => setTab(t)} />}
-        {tab === 'attendance' && <Subjects />}
+        {tab === 'today' && <Today go={go} />}
+        {tab === 'attendance' && <Attendance key={key} start={start} />}
+        {tab === 'planner' && <Planner />}
         {tab === 'exams' && <Exams />}
-        {tab === 'viva' && <Viva />}
-        {tab === 'study' && <Study />}
-        {tab === 'more' && <More />}
+        {tab === 'tools' && <Tools />}
       </main>
     </div>
   )
